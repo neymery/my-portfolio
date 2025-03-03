@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Element } from "react-scroll";
+
+import Navbar from "./components/Navbar";
+import HeroSection from "./components/HeroSection";
+import AchievementsSection from "./components/AchievementsSection";
+import AboutSection from "./components/AboutSection";
+import ProjectsSection from "./components/ProjectsSection";
+import EmailSection from "./components/EmailSection";
+ 
+
+import "./styles.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+ 
+
+      {/* Navbar fixe */}
+      <Navbar />
+
+      {/* Sections avec Element pour le défilement fluide */}
+      <Element name="home">
+        <HeroSection />
+      </Element>
+
+      <Element name="achievements">
+        <AchievementsSection />
+      </Element>
+
+      <Element name="about">
+        <AboutSection />
+      </Element>
+
+      <Element name="projects">
+        <ProjectsSection />
+      </Element>
+
+      <Element name="contact">
+        <EmailSection />
+      </Element>
+    </>
   );
 }
 
