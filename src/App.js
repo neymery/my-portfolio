@@ -1,46 +1,29 @@
-import React from "react";
-import { Element } from "react-scroll";
-
-import Navbar from "./components/Navbar";
-import HeroSection from "./components/HeroSection";
-import AchievementsSection from "./components/AchievementsSection";
-import AboutSection from "./components/AboutSection";
-import ProjectsSection from "./components/ProjectsSection";
-import EmailSection from "./components/EmailSection";
- 
-
-import "./styles.css";
+import StarsBackground from "./components/StarsBackground"
+// import Navigation from "./components/Navigation"
+import HeroSection from "./components/HeroSection"
+import AboutSection from "./components/AboutSection"
+// import SkillsSection from "./components/SkillsSection"
+// import ProjectsSection from "./components/ProjectsSection"
+import ExperienceSection from "./components/ExperienceSection"
+import ContactSection from "./components/ContactSection"
+import Footer from "./components/Footer"
 
 function App() {
   return (
-    <>
- 
-
-      {/* Navbar fixe */}
-      <Navbar />
-
-      {/* Sections avec Element pour le défilement fluide */}
-      <Element name="home">
+    <div className="relative min-h-screen bg-background text-foreground">
+      <StarsBackground />
+       
+      <main className="relative z-10">
         <HeroSection />
-      </Element>
-
-      <Element name="achievements">
-        <AchievementsSection />
-      </Element>
-
-      <Element name="about">
         <AboutSection />
-      </Element>
-
-      <Element name="projects">
-        <ProjectsSection />
-      </Element>
-
-      <Element name="contact">
-        <EmailSection />
-      </Element>
-    </>
-  );
+         
+        
+        <ExperienceSection />
+        <ContactSection />
+      </main>
+      <Footer />
+    </div>
+  )
 }
 
-export default App;
+export default App

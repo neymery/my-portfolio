@@ -17,9 +17,9 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100 border border-[#33353F]">
       <div className="container mx-auto flex items-center justify-between px-4 py-2 lg:py-4">
-        <a href="/" className="text-2xl md:text-5xl text-white font-semibold">
+        <Link to="home" smooth={true} duration={500} className="text-2xl md:text-5xl text-white font-semibold cursor-pointer">
           LOGO
-        </a>
+        </Link>
         {/* Bouton Mobile */}
         <div className="md:hidden">
           {!navbarOpen ? (

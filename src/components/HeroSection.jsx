@@ -1,131 +1,108 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaInstagram, FaFacebook, FaTwitter, FaDiscord, FaEnvelope } from "react-icons/fa";
+import { Github, Linkedin, Mail, Twitter, Sparkles } from "lucide-react"
 
-const HeroSection = () => {
-  // Fonction pour faire défiler vers une section
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
+export default function HeroSection() {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between px-10 md:px-20 pt-32 pb-20 bg-black text-white">
-      {/* Left Side - Text */}
-      <motion.div
-        className="w-full md:w-1/2 text-left space-y-4"
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h1 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-          Hello, I'm
-        </h1>
-        <h2 className="text-5xl md:text-7xl font-bold">Mobile Developer</h2>
-        <p className="text-gray-400 text-lg md:text-xl leading-relaxed">
-          Passionate about creating high-performance mobile applications with a seamless user experience.
-        </p>
-        <div className="flex gap-6 mt-6 pt-10">
-          {/* Hire Me Button */}
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 text-lg md:text-xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg shadow-lg hover:shadow-xl transition-all"
-            onClick={() => scrollToSection("contact")}
-          >
-            Hire Me
-          </motion.button>
-
-          {/* Download CV Button */}
-          <motion.a
-            href="/cv.pdf" // Remplace par le chemin correct de ton CV
-            download
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 text-lg md:text-xl font-bold border-2 border-pink-500 rounded-lg hover:bg-pink-500 hover:text-white transition-all"
-          >
-            Download CV
-          </motion.a>
-        </div>
-
-        {/* Social Media Links */}
-        <div className="flex gap-6 mt-8  ">
-          <a
-            href="https://github.com/your-username"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-3xl text-gray-400 hover:text-purple-500 transition-all"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/your-profile"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-3xl text-gray-400 hover:text-purple-500 transition-all"
-          >
-            <FaLinkedin />
-          </a>
-          <a
-            href="https://www.instagram.com/your-username"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-3xl text-gray-400 hover:text-purple-500 transition-all"
-          >
-            <FaInstagram />
-          </a>
-          <a
-            href="https://www.facebook.com/your-username"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-3xl text-gray-400 hover:text-purple-500 transition-all"
-          >
-            <FaFacebook />
-          </a>
-          <a
-            href="https://twitter.com/your-username"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-3xl text-gray-400 hover:text-purple-500 transition-all"
-          >
-            <FaTwitter />
-          </a>
-          <a
-            href="https://discord.com/users/your-username"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-3xl text-gray-400 hover:text-purple-500 transition-all"
-          >
-            <FaDiscord />
-          </a>
-          <a
-            href="mailto:your-email@example.com"
-            className="text-3xl text-gray-400 hover:text-purple-500 transition-all"
-          >
-            <FaEnvelope />
-          </a>
-        </div>
-      </motion.div>
+    <section id="home" className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+      <style>{`
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
+      `}</style>
       
-      {/* Right Side - Image */}
-      <motion.div
-        className="w-full md:w-1/2 flex justify-center mt-12 md:mt-0"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <motion.div
-          className="w-80 h-80 md:w-96 md:h-96 bg-gray-800 rounded-full flex items-center justify-center overflow-hidden shadow-2xl"
-          whileHover={{ scale: 1.05, rotate: 2 }}
-          transition={{ duration: 0.4 }}
-        >
-          <img src="/images/hero-pic.jpg" alt="Hero" className="w-full h-full object-cover" />
-        </motion.div>
-      </motion.div>
-    </div>
-  );
-};
+      <div className="absolute top-1/4 left-10 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
+      <div
+        className="absolute bottom-1/4 right-10 w-40 h-40 bg-pink-500/20 rounded-full blur-3xl animate-pulse"
+        style={{ animationDelay: "1s" }}
+      />
 
-export default HeroSection;
+      <div className="relative max-w-5xl mx-auto text-center">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6 animate-float">
+          <Sparkles className="w-4 h-4 text-blue-500" />
+          <span className="text-sm text-blue-500 font-medium">Available for opportunities</span>
+        </div>
+
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-white">
+          Hi, I'm{" "}
+          <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            Sarah Chen
+          </span>
+        </h1>
+
+        <p className="text-xl sm:text-2xl text-gray-400 mb-8">
+          Full Stack Developer crafting stellar digital experiences
+        </p>
+
+        <p className="text-lg text-gray-400/80 max-w-2xl mx-auto mb-12 leading-relaxed">
+          Passionate about building beautiful, functional applications that make a difference. I transform ideas into
+          reality using modern technologies and creative problem-solving.
+        </p>
+
+        <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
+          <a
+            href="#contact"
+            className="px-8 py-4 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50"
+          >
+            Get In Touch
+          </a>
+          <a
+            href="#projects"
+            className="px-8 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 text-white rounded-lg font-semibold hover:bg-gray-700/50 transition-all duration-300 hover:scale-105"
+          >
+            View Projects
+          </a>
+        </div>
+
+        <div className="flex items-center justify-center gap-6">
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 rounded-full bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-300 hover:scale-110 text-gray-300 hover:text-blue-500"
+            aria-label="GitHub"
+          >
+            <Github className="w-6 h-6" />
+          </a>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 rounded-full bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-300 hover:scale-110 text-gray-300 hover:text-blue-500"
+            aria-label="LinkedIn"
+          >
+            <Linkedin className="w-6 h-6" />
+          </a>
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 rounded-full bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-300 hover:scale-110 text-gray-300 hover:text-blue-500"
+            aria-label="Twitter"
+          >
+            <Twitter className="w-6 h-6" />
+          </a>
+          <a
+            href="mailto:sarah@example.com"
+            className="p-3 rounded-full bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-300 hover:scale-110 text-gray-300 hover:text-blue-500"
+            aria-label="Email"
+          >
+            <Mail className="w-6 h-6" />
+          </a>
+        </div>
+      </div>
+
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 rounded-full border-2 border-blue-500/50 flex items-start justify-center p-2">
+          <div className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+        </div>
+      </div>
+    </section>
+  )
+}

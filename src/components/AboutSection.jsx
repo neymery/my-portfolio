@@ -1,93 +1,87 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import LanguagesSection from "./LanguagesSection";
-import SkillsSection from "./SkillsSection";
-import EducationSection from "./EducationSection";
+import { Code2, Coffee, Palette, Zap, Heart, Rocket } from "lucide-react"
 
-const AboutSection = () => {
-  const [selectedTab, setSelectedTab] = useState("skills");
+export default function AboutSection() {
+  const highlights = [
+    { icon: Code2, label: "5+ Years Experience", color: "text-blue-600" },
+    { icon: Rocket, label: "50+ Projects", color: "text-purple-600" },
+    { icon: Heart, label: "Passion Driven", color: "text-pink-600" },
+    { icon: Zap, label: "Fast Learner", color: "text-blue-600" },
+  ]
+
+  const interests = [
+    { icon: Code2, text: "Clean Code" },
+    { icon: Palette, text: "UI/UX Design" },
+    { icon: Coffee, text: "Coffee Enthusiast"},
+    { icon: Rocket, text: "Space Exploration" },
+  ]
 
   return (
-    <section className="bg-black text-white py-12 md:py-20 px-4 md:px-6 text-center" id="about">
-      <h2 className="text-center text-3xl md:text-4xl font-bold text-white mt-4 mb-6 md:mb-12">
-        About Me
-      </h2>
+    <section id="about" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white">
+            About <span className="text-blue-500">Me</span>
+          </h2>
+          <p className="text-xl text-gray-400">Get to know me better</p>
+        </div>
 
-      <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-        I am a full-stack web developer with a passion for creating interactive and responsive web applications.
-      </p>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="relative">
+            <div className="aspect-square rounded-2xl bg-gradient-to-br from-blue-500/20 to-pink-500/20 p-1 animate-pulse">
+              <div className="w-full h-full rounded-2xl bg-gray-800 flex items-center justify-center overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center text-white text-6xl font-bold">
+                  SC
+                </div>
+              </div>
+            </div>
+            <div className="absolute -top-6 -right-6 w-24 h-24 bg-pink-500/30 rounded-full blur-2xl animate-pulse" />
+            <div
+              className="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-500/30 rounded-full blur-2xl animate-pulse"
+              style={{ animationDelay: "1s" }}
+            />
+          </div>
 
-      {/* Boutons de sélection */}
-      <div className="flex flex-wrap justify-center gap-2 md:gap-4 mt-6 md:mt-8">
-        {[
-          { id: "education", label: "Education" },
-          { id: "skills", label: "Skills" },
-          { id: "certificates", label: "Certificates" },
-          { id: "languages", label: "Languages" },
-        ].map(({ id, label }) => (
-          <button
-            key={id}
-            onClick={() => setSelectedTab(id)}
-            className={`px-4 py-2 md:px-6 md:py-3 text-sm md:text-lg font-bold rounded-lg transition-all duration-300 
-              ${selectedTab === id ? "bg-purple-600 text-white shadow-lg scale-105" : "bg-gray-800 text-gray-300 hover:bg-purple-500 hover:text-white"}
-            `}
-          >
-            {label}
-          </button>
-        ))}
-      </div>
+          <div className="space-y-6">
+            <p className="text-lg leading-relaxed text-gray-300">
+              Hey there! I'm Sarah, a passionate full-stack developer with a love for creating beautiful and functional
+              web applications. My journey in tech started 5 years ago, and I haven't looked back since.
+            </p>
+            <p className="text-lg leading-relaxed text-gray-300">
+              I specialize in building scalable applications using modern technologies like React, Node.js, and cloud
+              platforms. I believe in writing clean, maintainable code and creating user experiences that delight.
+            </p>
+            <p className="text-lg leading-relaxed text-gray-300">
+              When I'm not coding, you'll find me exploring the latest tech trends, contributing to open-source
+              projects, or stargazing (hence the space theme!). I'm always excited to take on new challenges and
+              collaborate on innovative projects.
+            </p>
 
-      {/* Contenu affiché */}
-      <div className="mt-8 md:mt-12">
-        <AnimatePresence mode="wait">
-          {selectedTab === "skills" && (
-            <motion.div
-              key="skills"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-            >
-              <SkillsSection />
-            </motion.div>
-          )}
-          {selectedTab === "education" && (
-            <motion.div
-              key="education"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-            >
-              <EducationSection />
-            </motion.div>
-          )}
-          {selectedTab === "certificates" && (
-            <motion.div
-              key="certificates"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-            >
-              <p className="text-lg md:text-xl text-gray-300">🎓 Certifications will be displayed here...</p>
-            </motion.div>
-          )}
-          {selectedTab === "languages" && (
-            <motion.div
-              key="languages"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-            >
-              <LanguagesSection />
-            </motion.div>
-          )}
-        </AnimatePresence>
+            <div className="grid grid-cols-2 gap-4 pt-4">
+              {highlights.map((item, index) => (
+                <div
+                  key={index}
+                  className="p-4 rounded-xl bg-gray-800 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:scale-105"
+                >
+                  <item.icon className={`w-8 h-8 mb-2 ${item.color}`} />
+                  <p className="font-semibold text-white">{item.label}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap gap-3 pt-4">
+              {interests.map((interest, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-800/50 border border-gray-700 hover:border-blue-500/50 transition-all duration-300"
+                >
+                  <interest.icon className="w-4 h-4 text-blue-500" />
+                  <span className="text-sm font-medium text-gray-300">{interest.text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-  );
-};
-
-export default AboutSection;
+  )
+}
