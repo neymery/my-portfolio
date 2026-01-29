@@ -12,7 +12,7 @@ const educationData = [
 
 const EducationSection = () => {
   return (
-    <section id="education" className="bg-black text-white py-12">
+    <section id="education" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
       <div className="text-center">
         <h2 className="text-4xl font-bold text-white mb-6">Education</h2>
       </div>

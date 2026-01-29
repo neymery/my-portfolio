@@ -2,8 +2,8 @@ import { Code2, Coffee, Palette, Zap, Heart, Rocket } from "lucide-react"
 
 export default function AboutSection() {
   const highlights = [
-    { icon: Code2, label: "5+ Years Experience", color: "text-blue-600" },
-    { icon: Rocket, label: "50+ Projects", color: "text-purple-600" },
+    { icon: Code2, label: "2+ Years Experience", color: "text-blue-600" },
+    { icon: Rocket, label: "10+ Projects", color: "text-purple-600" },
     { icon: Heart, label: "Passion Driven", color: "text-pink-600" },
     { icon: Zap, label: "Fast Learner", color: "text-blue-600" },
   ]
@@ -16,7 +16,7 @@ export default function AboutSection() {
   ]
 
   return (
-    <section id="about" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+    <section id="about" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white">
@@ -27,35 +27,6 @@ export default function AboutSection() {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
-            <div className="aspect-square rounded-2xl bg-gradient-to-br from-blue-500/20 to-pink-500/20 p-1 animate-pulse">
-              <div className="w-full h-full rounded-2xl bg-gray-800 flex items-center justify-center overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center text-white text-6xl font-bold">
-                  SC
-                </div>
-              </div>
-            </div>
-            <div className="absolute -top-6 -right-6 w-24 h-24 bg-pink-500/30 rounded-full blur-2xl animate-pulse" />
-            <div
-              className="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-500/30 rounded-full blur-2xl animate-pulse"
-              style={{ animationDelay: "1s" }}
-            />
-          </div>
-
-          <div className="space-y-6">
-            <p className="text-lg leading-relaxed text-gray-300">
-              Hey there! I'm Sarah, a passionate full-stack developer with a love for creating beautiful and functional
-              web applications. My journey in tech started 5 years ago, and I haven't looked back since.
-            </p>
-            <p className="text-lg leading-relaxed text-gray-300">
-              I specialize in building scalable applications using modern technologies like React, Node.js, and cloud
-              platforms. I believe in writing clean, maintainable code and creating user experiences that delight.
-            </p>
-            <p className="text-lg leading-relaxed text-gray-300">
-              When I'm not coding, you'll find me exploring the latest tech trends, contributing to open-source
-              projects, or stargazing (hence the space theme!). I'm always excited to take on new challenges and
-              collaborate on innovative projects.
-            </p>
-
             <div className="grid grid-cols-2 gap-4 pt-4">
               {highlights.map((item, index) => (
                 <div
@@ -79,6 +50,24 @@ export default function AboutSection() {
                 </div>
               ))}
             </div>
+          </div>
+
+          <div className="space-y-6">
+            <p className="text-lg leading-relaxed text-gray-300">
+              Hey there! I'm Meryem, a passionate full-stack developer with a love for creating beautiful and functional
+              web applications. My journey in tech started 2 years ago, and I haven't looked back since.
+            </p>
+            <p className="text-lg leading-relaxed text-gray-300">
+              I specialize in building scalable applications using modern technologies like React, Node.js, and cloud
+              platforms. I believe in writing clean, maintainable code and creating user experiences that delight.
+            </p>
+            <p className="text-lg leading-relaxed text-gray-300">
+              When I'm not coding, you'll find me exploring the latest tech trends, contributing to open-source
+              projects, or stargazing (hence the space theme!). I'm always excited to take on new challenges and
+              collaborate on innovative projects.
+            </p>
+
+
           </div>
         </div>
       </div>

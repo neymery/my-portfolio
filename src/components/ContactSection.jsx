@@ -21,9 +21,9 @@ export default function ContactSection() {
   }
 
   const contactInfo = [
-    { icon: Mail, label: "Email", value: "sarah@example.com", href: "mailto:sarah@example.com" },
-    { icon: Phone, label: "Phone", value: "+1 (555) 123-4567", href: "tel:+15551234567" },
-    { icon: MapPin, label: "Location", value: "San Francisco, CA", href: "#" },
+    { icon: Mail, label: "Email", value: " neymeryem1@gmail.com", href: "mailto:mery@example.com" },
+    { icon: Phone, label: "Phone", value: "+212 777892483", href: "tel:+15551234567" },
+    { icon: MapPin, label: "Location", value: "Rabat , MA", href: "#" },
   ]
 
   const socialLinks = [

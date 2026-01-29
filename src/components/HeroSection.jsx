@@ -32,7 +32,7 @@ export default function HeroSection() {
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-white">
           Hi, I'm{" "}
           <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-            Sarah Chen
+            Meryem
           </span>
         </h1>
 
@@ -98,11 +98,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 rounded-full border-2 border-blue-500/50 flex items-start justify-center p-2">
-          <div className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
-        </div>
-      </div>
+  
     </section>
   )
 }

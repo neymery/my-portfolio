@@ -3,23 +3,10 @@ import { Briefcase, GraduationCap } from "lucide-react"
 export default function ExperienceSection() {
   const experiences = [
     {
-      title: "Senior Full Stack Developer",
-      company: "TechCorp Inc.",
-      location: "San Francisco, CA",
-      period: "2022 - Present",
-      description:
-        "Leading development of scalable web applications, mentoring junior developers, and implementing best practices across the team.",
-      achievements: [
-        "Architected microservices infrastructure serving 1M+ users",
-        "Reduced application load time by 60% through optimization",
-        "Led team of 5 developers on flagship product",
-      ],
-    },
-    {
       title: "Full Stack Developer",
-      company: "StartupHub",
+      company: "IT Learning & Consulting",
       location: "Remote",
-      period: "2020 - 2022",
+      period: "2 Months",
       description:
         "Developed and maintained multiple client projects, focusing on modern web technologies and responsive design.",
       achievements: [
@@ -28,38 +15,32 @@ export default function ExperienceSection() {
         "Improved code quality with comprehensive testing strategies",
       ],
     },
-    {
-      title: "Junior Developer",
-      company: "WebSolutions Ltd.",
-      location: "New York, NY",
-      period: "2019 - 2020",
-      description:
-        "Collaborated with senior developers on various projects, learning best practices and modern development workflows.",
-      achievements: [
-        "Contributed to 10+ client projects",
-        "Developed reusable component library",
-        "Participated in code reviews and agile ceremonies",
-      ],
-    },
+    // {
+    //   title: "Junior Developer",
+    //   company: "WebSolutions Ltd.",
+    //   location: "New York, NY",
+    //   period: "2019 - 2020",
+    //   description:
+    //     "Collaborated with senior developers on various projects, learning best practices and modern development workflows.",
+    //   achievements: [
+    //     "Contributed to 10+ client projects",
+    //     "Developed reusable component library",
+    //     "Participated in code reviews and agile ceremonies",
+    //   ],
+    // },
   ]
 
   const education = [
     {
-      degree: "Master of Science in Computer Science",
-      school: "Stanford University",
-      period: "2017 - 2019",
-      description: "Specialized in Software Engineering and Web Technologies",
-    },
-    {
-      degree: "Bachelor of Science in Computer Engineering",
-      school: "MIT",
-      period: "2013 - 2017",
-      description: "Graduated with Honors, Dean's List all semesters",
-    },
+      degree: "Full-Stack Developer Training",
+      school: "",
+      period: "2023 - 2025",
+      description: "Intensive full-stack web development training program focused on active learning and hands-on project simulation. This immersive experience is designed to align with industry standards, emphasizing teamwork, project management, and the application of agile methodologies and tools. Through collaborative projects, I gained practical skills in both front-end and back-end development, preparing me for real-world challenges in the tech industry.",
+    }
   ]
 
   return (
-    <section id="experience" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
+    <section id="experience" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white">
